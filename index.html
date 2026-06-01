@@ -141,11 +141,7 @@
       padding-bottom: 0.7rem;
     }
 
-    .hero-grid,
-    .mini-grid,
-    .links-grid,
-    .contact-grid,
-    .clock-grid {
+    .hero-grid, .mini-grid, .links-grid, .contact-grid, .clock-grid {
       display: grid;
       gap: 1rem;
     }
@@ -155,10 +151,7 @@
       align-items: stretch;
     }
 
-    .mini-grid,
-    .links-grid,
-    .contact-grid,
-    .clock-grid {
+    .mini-grid, .links-grid, .contact-grid, .clock-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -209,11 +202,7 @@
       border: 1px solid #d4e7f1;
     }
 
-    .profile-side,
-    .summary-card,
-    .link-card,
-    .contact-card,
-    .clock-card {
+    .profile-side, .summary-card, .link-card, .contact-card, .clock-card {
       background: #fff;
       border-radius: 1.4rem;
       border: 1px solid #eef3f8;
@@ -246,10 +235,7 @@
       margin-bottom: 0.4rem;
     }
 
-    .summary-card span,
-    .contact-card span,
-    .link-card span,
-    .clock-card span {
+    .summary-card span, .contact-card span, .link-card span, .clock-card span {
       display: block;
       font-size: 0.78rem;
       text-transform: uppercase;
@@ -259,9 +245,7 @@
       margin-bottom: 0.45rem;
     }
 
-    .summary-card strong,
-    .contact-card strong,
-    .link-card strong {
+    .summary-card strong, .contact-card strong, .link-card strong {
       font-size: 1rem;
       line-height: 1.4;
       color: var(--ink);
@@ -347,8 +331,7 @@
       margin-top: 1.2rem;
     }
 
-    .hero-btn,
-    .piece-btn {
+    .hero-btn, .piece-btn {
       background: linear-gradient(180deg, #fff, #f4f8fb);
       color: var(--ink);
       border: 1px solid rgba(42,127,170,0.20);
@@ -366,16 +349,13 @@
       font-family: inherit;
     }
 
-    .hero-btn.primary,
-    .piece-btn.primary {
+    .hero-btn.primary, .piece-btn.primary {
       background: linear-gradient(135deg, #1E2F5A, #2A7FAA, #6CB4D7);
       color: white;
       border-color: transparent;
     }
 
-    .hero-btn:hover,
-    .piece-btn:hover,
-    .link-card:hover {
+    .hero-btn:hover, .piece-btn:hover, .link-card:hover {
       transform: translateY(-1px);
       box-shadow: 0 10px 24px rgba(42,127,170,0.18);
     }
@@ -404,54 +384,11 @@
       border-top: 1px solid var(--line);
     }
 
-    .piece-controls .left,
-    .piece-controls .right {
+    .piece-controls .left, .piece-controls .right {
       display: flex;
       flex-wrap: wrap;
       gap: 0.8rem;
       align-items: center;
-    }
-
-    .nav-controls {
-      position: fixed;
-      bottom: 1.5rem;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: center;
-      z-index: 1000;
-      pointer-events: none;
-    }
-
-    .button-group {
-      background: rgba(22,34,48,0.85);
-      backdrop-filter: blur(14px);
-      border-radius: 4rem;
-      padding: 0.6rem 1.2rem;
-      display: flex;
-      gap: 1rem;
-      box-shadow: 0 12px 28px -8px rgba(0,0,0,0.3);
-      pointer-events: auto;
-      border: 1px solid rgba(255,255,240,0.25);
-    }
-
-    .nav-btn {
-      background: rgba(255,255,255,0.2);
-      border: none;
-      font-size: 1rem;
-      font-weight: 700;
-      padding: 0.65rem 1.35rem;
-      border-radius: 2.5rem;
-      color: white;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      font-family: inherit;
-    }
-
-    .nav-btn:hover {
-      background: #fff;
-      color: var(--ink);
-      transform: scale(1.02);
     }
 
     .clock-toolbar {
@@ -532,15 +469,9 @@
     }
 
     @media (max-width: 920px) {
-      .hero-grid,
-      .mini-grid,
-      .links-grid,
-      .contact-grid,
-      .clock-grid,
-      .clock-toolbar {
+      .hero-grid, .mini-grid, .links-grid, .contact-grid, .clock-grid, .clock-toolbar {
         grid-template-columns: 1fr;
       }
-
       .hero-copy h1 {
         max-width: 100%;
       }
@@ -551,46 +482,22 @@
         padding: 4.1rem 0.8rem 5.5rem;
         background-size: 28px 28px, 28px 28px, 100% 100%;
       }
-
       .parcel {
         min-height: calc(100vh - 7rem);
         align-items: flex-start;
       }
-
       .parcel-inner {
         padding: 1.45rem 1.2rem 1.6rem;
       }
-
       .parcel-title {
         font-size: 1.45rem;
       }
-
-      .hero-actions,
-      .piece-controls,
-      .piece-controls .left,
-      .piece-controls .right {
+      .hero-actions, .piece-controls, .piece-controls .left, .piece-controls .right {
         flex-direction: column;
         align-items: stretch;
       }
-
-      .hero-btn,
-      .piece-btn {
+      .hero-btn, .piece-btn {
         width: 100%;
-      }
-
-      .button-group {
-        gap: 0.6rem;
-        padding: 0.5rem 1rem;
-      }
-
-      .nav-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.85rem;
-      }
-
-      .accordion-header {
-        padding: 0.8rem 1rem;
-        font-size: 0.98rem;
       }
     }
   </style>
@@ -1016,7 +923,6 @@ function updateClocks() {
 picker.addEventListener('change', updateClocks);
 refreshBtn.addEventListener('click', updateClocks);
 
-// Initialize on page load
 updateClocks();</code></pre>
               </div>
             </div>
@@ -1042,20 +948,15 @@ updateClocks();</code></pre>
   </footer>
 
   <script>
-    // Accordion toggle functionality
     document.querySelectorAll('.accordion-header').forEach(header => {
       header.addEventListener('click', function() {
         const item = this.parentElement;
         const isExpanded = item.classList.contains('expanded');
-        
-        // Close all accordions in the same group
         const group = item.parentElement;
         group.querySelectorAll('.accordion-item').forEach(accordion => {
           accordion.classList.remove('expanded');
           accordion.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
         });
-        
-        // Open the clicked one if it wasn't already open
         if (!isExpanded) {
           item.classList.add('expanded');
           this.setAttribute('aria-expanded', 'true');
@@ -1063,7 +964,6 @@ updateClocks();</code></pre>
       });
     });
 
-    // Page navigation buttons
     document.querySelectorAll('[data-action]').forEach(button => {
       button.addEventListener('click', function() {
         const action = this.dataset.action;
@@ -1086,7 +986,6 @@ updateClocks();</code></pre>
       });
     });
 
-    // World Clock functionality
     const picker = document.getElementById('timezonePicker');
     const refreshBtn = document.getElementById('refreshClock');
 
@@ -1125,7 +1024,6 @@ updateClocks();</code></pre>
     if (picker) {
       picker.addEventListener('change', updateClocks);
       refreshBtn.addEventListener('click', updateClocks);
-      // Initialize on page load
       updateClocks();
     }
   </script>
