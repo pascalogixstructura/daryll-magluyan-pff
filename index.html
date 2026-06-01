@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Daryll Magluyan | Administrative and Revenue-Support Professional</title>
+  <meta name="description" content="Professional website of Daryll Magluyan for administrative support, CRM, billing, collections, client follow-up, web page support, and back-office work." />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg1: #eef3f7;
+      --bg2: #dde6ee;
+      --ink: #1f2e48;
+      --muted: #4a5b6e;
+      --line: #e2edf2;
+      --accent: #2A7FAA;
+      --accent-deep: #1E2F5A;
+      --white: rgba(255,255,255,0.96);
+      --shadow: 0 20px 35px -12px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.03);
+      --code-bg: #0f172a;
+      --code-ink: #e5f4ff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      padding: 4.2rem 1rem 6rem;
+      background:
+        linear-gradient(rgba(42,127,170,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(42,127,170,0.055) 1px, transparent 1px),
+        linear-gradient(145deg, var(--bg1) 0%, var(--bg2) 100%);
+      background-size: 42px 42px, 42px 42px, 100% 100%;
+      font-family: 'Google Sans', 'Inter', system-ui, 'Segoe UI', sans-serif;
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    .top-ticker {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1100;
+      overflow: hidden;
+      white-space: nowrap;
+      background: rgba(22,34,48,0.92);
+      color: #fff;
+      border-bottom: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(14px);
+    }
+
+    .ticker-track {
+      display: inline-block;
+      padding: 0.72rem 0;
+      animation: tickerMove 34s linear infinite;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      font-weight: 650;
+    }
+
+    .ticker-track span {
+      padding-right: 2.2rem;
+    }
+
+    @keyframes tickerMove {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .parcel-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .parcel {
+      background:
+        linear-gradient(rgba(30,47,90,0.030) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30,47,90,0.030) 1px, transparent 1px),
+        var(--white);
+      background-size: 24px 24px, 24px 24px, 100% 100%;
+      border-radius: 2rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.78);
+      scroll-margin-top: 4.5rem;
+      min-height: calc(100vh - 8rem);
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .parcel::before {
+      content: attr(data-page-label);
+      position: absolute;
+      top: 1rem;
+      right: 1.35rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(31,46,72,0.34);
+      font-weight: 800;
+      pointer-events: none;
+    }
+
+    .parcel-inner {
+      width: 100%;
+      padding: 2.2rem 2.4rem;
+    }
+
+    .parcel-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--accent-deep), #2A4D7C);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+      border-left: 5px solid var(--accent);
+      padding-left: 1rem;
+    }
+
+    .parcel-sub {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 0.7rem;
+    }
+
+    .hero-grid,
+    .mini-grid,
+    .links-grid,
+    .contact-grid,
+    .clock-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: stretch;
+    }
+
+    .mini-grid,
+    .links-grid,
+    .contact-grid,
+    .clock-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(2.4rem, 6vw, 4.6rem);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+      margin-bottom: 1rem;
+      max-width: 12ch;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.9rem;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: #314255;
+      max-width: 68ch;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1rem;
+    }
+
+    .chip {
+      padding: 0.55rem 0.95rem;
+      border-radius: 999px;
+      background: #edf6fb;
+      color: var(--accent-deep);
+      font-size: 0.92rem;
+      font-weight: 650;
+      border: 1px solid #d4e7f1;
+    }
+
+    .profile-side,
+    .summary-card,
+    .link-card,
+    .contact-card,
+    .clock-card {
+      background: #fff;
+      border-radius: 1.4rem;
+      border: 1px solid #eef3f8;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+      padding: 1rem 1.1rem;
+    }
+
+    .profile-side {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .portrait {
+      min-height: 240px;
+      border-radius: 1.25rem;
+      background: linear-gradient(135deg, rgba(42,127,170,0.12), rgba(30,47,90,0.10));
+      border: 1px solid #dcebf3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.25rem;
+    }
+
+    .portrait strong {
+      display: block;
+      font-size: 1.4rem;
+      color: var(--accent-deep);
+      margin-bottom: 0.4rem;
+    }
+
+    .summary-card span,
+    .contact-card span,
+    .link-card span,
+    .clock-card span {
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 800;
+      margin-bottom: 0.45rem;
+    }
+
+    .summary-card strong,
+    .contact-card strong,
+    .link-card strong {
+      font-size: 1rem;
+      line-height: 1.4;
+      color: var(--ink);
+    }
+
+    .accordion-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .accordion-item {
+      background: #fff;
+      border-radius: 1.25rem;
+      border: 1px solid #eef3f8;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 1rem 1.4rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-align: left;
+      cursor: pointer;
+      color: var(--ink);
+      gap: 1rem;
+      font-family: inherit;
+    }
+
+    .accordion-title {
+      flex: 1;
+    }
+
+    .accordion-icon {
+      font-size: 1.4rem;
+      transition: transform 0.25s ease;
+      color: var(--accent);
+    }
+
+    .accordion-item.expanded .accordion-icon {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 0 1.4rem 1.4rem;
+      border-top: 1px solid #e9f0f4;
+      background: #fdfdfd;
+    }
+
+    .accordion-item.expanded .accordion-content {
+      display: block;
+      animation: fadeSlide 0.25s ease-out;
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .accordion-content ul {
+      padding-left: 1.35rem;
+      margin-top: 0.65rem;
+    }
+
+    .accordion-content li {
+      margin: 0.35rem 0;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.2rem;
+    }
+
+    .hero-btn,
+    .piece-btn {
+      background: linear-gradient(180deg, #fff, #f4f8fb);
+      color: var(--ink);
+      border: 1px solid rgba(42,127,170,0.20);
+      font-size: 0.96rem;
+      font-weight: 700;
+      padding: 0.78rem 1.2rem;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: inherit;
+    }
+
+    .hero-btn.primary,
+    .piece-btn.primary {
+      background: linear-gradient(135deg, #1E2F5A, #2A7FAA, #6CB4D7);
+      color: white;
+      border-color: transparent;
+    }
+
+    .hero-btn:hover,
+    .piece-btn:hover,
+    .link-card:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(42,127,170,0.18);
+    }
+
+    .link-card {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+      display: block;
+    }
+
+    .site-note {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .piece-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .piece-controls .left,
+    .piece-controls .right {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .nav-controls {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      z-index: 1000;
+      pointer-events: none;
+    }
+
+    .button-group {
+      background: rgba(22,34,48,0.85);
+      backdrop-filter: blur(14px);
+      border-radius: 4rem;
+      padding: 0.6rem 1.2rem;
+      display: flex;
+      gap: 1rem;
+      box-shadow: 0 12px 28px -8px rgba(0,0,0,0.3);
+      pointer-events: auto;
+      border: 1px solid rgba(255,255,240,0.25);
+    }
+
+    .nav-btn {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.65rem 1.35rem;
+      border-radius: 2.5rem;
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .nav-btn:hover {
+      background: #fff;
+      color: var(--ink);
+      transform: scale(1.02);
+    }
+
+    .clock-toolbar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: end;
+      margin: 1rem 0;
+    }
+
+    .clock-toolbar label {
+      display: block;
+      font-weight: 800;
+      color: var(--accent-deep);
+      margin-bottom: 0.35rem;
+    }
+
+    select {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border-radius: 1rem;
+      border: 1px solid #cfe2ed;
+      font: inherit;
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .clock-card strong {
+      display: block;
+      font-size: 1.8rem;
+      color: var(--accent-deep);
+      margin-bottom: 0.25rem;
+      line-height: 1.1;
+    }
+
+    .clock-card .date-line {
+      color: var(--ink);
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .clock-card .zone-line {
+      font-size: 0.92rem;
+      margin-bottom: 0;
+    }
+
+    .code-box {
+      background: var(--code-bg);
+      color: var(--code-ink);
+      border-radius: 1.2rem;
+      padding: 1rem;
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    footer {
+      max-width: 1280px;
+      margin: 1.3rem auto 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+
+    p, h1, h2, h3, div, span, pre, code {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .mini-grid,
+      .links-grid,
+      .contact-grid,
+      .clock-grid,
+      .clock-toolbar {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy h1 {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 680px) {
+      body {
+        padding: 4.1rem 0.8rem 5.5rem;
+        background-size: 28px 28px, 28px 28px, 100% 100%;
+      }
+
+      .parcel {
+        min-height: calc(100vh - 7rem);
+        align-items: flex-start;
+      }
+
+      .parcel-inner {
+        padding: 1.45rem 1.2rem 1.6rem;
+      }
+
+      .parcel-title {
+        font-size: 1.45rem;
+      }
+
+      .hero-actions,
+      .piece-controls,
+      .piece-controls .left,
+      .piece-controls .right {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-btn,
+      .piece-btn {
+        width: 100%;
+      }
+
+      .button-group {
+        gap: 0.6rem;
+        padding: 0.5rem 1rem;
+      }
+
+      .nav-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+      }
+
+      .accordion-header {
+        padding: 0.8rem 1rem;
+        font-size: 0.98rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-ticker" aria-label="Professional signal ticker">
+    <div class="ticker-track">
+      <span>Beauty with Discipline</span>
+      <span>Presence with Purpose</span>
+      <span>Warmth with Work Ethic</span>
+      <span>Administrative Support</span>
+      <span>CRM Workflow</span>
+      <span>ArborGold Exposure</span>
+      <span>Billing & Collections</span>
+      <span>Client Follow-Up</span>
+      <span>Proof-of-Work Growth</span>
+      <span>Web Page Support</span>
+      <span>Beauty with Discipline</span>
+      <span>Presence with Purpose</span>
+      <span>Warmth with Work Ethic</span>
+      <span>Administrative Support</span>
+      <span>CRM Workflow</span>
+      <span>ArborGold Exposure</span>
+      <span>Billing & Collections</span>
+      <span>Client Follow-Up</span>
+      <span>Proof-of-Work Growth</span>
+      <span>Web Page Support</span>
+    </div>
+  </div>
+
+  <div class="parcel-container">
+
+    <section class="parcel" id="parcel-1" data-parcel-index="0" data-page-label="Page 01 / Front">
+      <div class="parcel-inner">
+        <div class="parcel-title">Daryll Magluyan</div>
+        <div class="parcel-sub">Administrative and Revenue-Support Professional</div>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">Beauty, anchored by discipline</div>
+            <h1>Reliable support for real work.</h1>
+            <p class="lead">Daryll Magluyan is building a professional path in administrative operations, CRM support, ArborGold-related workflow, billing, collections, client follow-up, and guided web page support.</p>
+            <p>Her direction combines professional presence, organized execution, communication discipline, and practical proof-of-work growth.</p>
+
+            <div class="chip-row">
+              <div class="chip">Administrative Support</div>
+              <div class="chip">CRM</div>
+              <div class="chip">ArborGold</div>
+              <div class="chip">Billing & Collections</div>
+              <div class="chip">Client Follow-Up</div>
+              <div class="chip">Web Page Support</div>
+            </div>
+
+            <div class="hero-actions">
+              <a class="hero-btn primary" href="#parcel-6">Contact</a>
+              <a class="hero-btn" href="#parcel-5">View Portfolio</a>
+              <a class="hero-btn" href="#parcel-7">World Clock</a>
+            </div>
+          </div>
+
+          <div class="profile-side">
+            <div class="portrait">
+              <div>
+                <strong>Calm. Capable. Trainable.</strong>
+                <p>This space presents Daryll’s professional direction, support capability, and emerging webpage service path.</p>
+              </div>
+            </div>
+
+            <div class="mini-grid">
+              <div class="summary-card">
+                <span>Focus</span>
+                <strong>Admin, CRM, billing, collections, and web page support</strong>
+              </div>
+              <div class="summary-card">
+                <span>Work Style</span>
+                <strong>Organized, client-friendly, reliable, and willing to learn</strong>
+              </div>
+              <div class="summary-card">
+                <span>Study Path</span>
+                <strong>Mechanical Engineering studies paused due to work and financial need</strong>
+              </div>
+              <div class="summary-card">
+                <span>Current Goal</span>
+                <strong>Remote, hybrid, or office-based support roles and guided webpage projects</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="piece-controls">
+          <div class="left">
+            <button class="piece-btn" data-action="home">🏠 Home</button>
+          </div>
+          <div class="right">
+            <button class="piece-btn primary" data-action="next">Next ➜</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="parcel" id="parcel-2" data-parcel-index="1" data-page-label="Page 02 / About">
+      <div class="parcel-inner">
+        <div class="parcel-title">About + Contact Direction</div>
+        <div class="parcel-sub">A practical path built through real responsibility</div>
+
+        <div class="accordion-group">
+          <div class="accordion-item expanded">
+            <button class="accordion-header" aria-expanded="true">
+              <span class="accordion-title">Professional direction</span>
+              <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+              <p>Daryll began Mechanical Engineering studies but had to pause due to the need to work. That experience strengthens the story of responsibility, practical resilience, and disciplined rebuilding.</p>
+              <p>Her current direction is administrative operations, remote back-office support, CRM support, billing, collections, client/account follow-up, and guided webpage support.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span class="accordion-title">What she lives and projects</span>
+              <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+              <ul>
+                <li>Responsibility under pressure</li>
+                <li>Client-friendly presence</li>
+                <li>Communication discipline</li>
+                <li>Organized support</li>
+                <li>Learning through proof-of-work</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span class="accordion-title">Contact path</span>
+              <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+              <p>Email inquiries are directed to Daryll and may copy Secretariat support for coordination, inquiry tracking, and response follow-through.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="piece-controls">
+          <div class="left">
+            <button class="piece-btn" data-action="back">⬅ Back</button>
+            <button class="piece-btn" data-action="home">🏠 Home</button>
+          </div>
+          <div class="right">
+            <button class="piece-btn primary" data-action="next">Next ➜</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="parcel" id="parcel-3" data-parcel-index="2" data-page-label="Page 03 / Experience">
+      <div class="parcel-inner">
+        <div class="parcel-title">Experience</div>
+        <div class="parcel-sub">Work that reflects trust, support, and follow-through</div>
+
+        <div class="accordion-group">
+          <div class="accordion-item expanded">
+            <button class="accordion-header" aria-expanded="true">
+              <span class="accordion-title">Staff | Christian Life Center Koronadal</span>
+              <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+              <ul>
+                <li>Supported administrative and account-related workflows.</li>
+                <li>Handled or supported CRM-related record management using ArborGold.</li>
+                <li>Assisted in billing and collection follow-up.</li>
+                <li>Maintained client and account information with attention to accuracy and continuity.</li>
+                <li>Helped keep administrative processes moving through documentation, coordination, and consistent follow-through.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span class="accordion-title">Sales Executive | Short-Term Restobar Role</span>
+              <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+              <ul>
+                <li>Supported customer engagement in a fast-paced service environment.</li>
+                <li>Helped build client rapport and contributed to indirect conversions.</li>
+                <li>Assisted in presenting offerings and maintaining a positive customer experience.</li>
+                <li>Strengthened communication, customer-facing confidence, and sales support presence.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="piece-controls">
+          <div class="left">
+            <button class="piece-btn" data-action="back">⬅ Back</button>
+            <button class="piece-btn" data-action="home">🏠 Home</button>
+          </div>
+          <div class="right">
+            <button class="piece-btn primary" data-action="next">Next ➜</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="parcel" id="parcel-4" data-parcel-index="3" data-page-label="Page 04 / Skills">
+      <div class="parcel-inner">
+        <div class="parcel-title">Skills</div>
+        <div class="parcel-sub">Tools and work areas being developed</div>
+
+        <p class="lead">The skill path is built around administrative support, record accuracy, client/account handling, revenue-support workflow, and simple webpage-building assistance.</p>
+
+        <div class="chip-row">
+          <div class="chip">ArborGold</div>
+          <div class="chip">CRM</div>
+          <div class="chip">Billing</div>
+          <div class="chip">Collections</div>
+          <div class="chip">Administrative Support</div>
+          <div class="chip">Client Follow-Up</div>
+          <div class="chip">Data Entry</div>
+          <div class="chip">Customer Records</div>
+          <div class="chip">Email Communication</div>
+          <div class="chip">Sales Support</div>
+          <div class="chip">HTML + CSS</div>
+          <div class="chip">HTML + CSS + JavaScript</div>
+        </div>
+
+        <div class="piece-controls">
+          <div class="left">
+            <button class="piece-btn" data-action="back">⬅ Back</button>
+            <button class="piece-btn" data-action="home">🏠 Home</button>
+          </div>
+          <div class="right">
+            <button class="piece-btn primary" data-action="next">Next ➜</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="parcel" id="parcel-5" data-parcel-index="4" data-page-label="Page 05 / Portfolio">
+      <div class="parcel-inner">
+        <div class="parcel-title">Portfolio & Platforms</div>
+        <div class="parcel-sub">Sample work, links, project direction, and webpage-selling path</div>
+
+        <div class="links-grid">
+          <a class="link-card" href="https://www.linkedin.com/in/daryllmagluyan" target="_blank" rel="noopener">
+            <span>LinkedIn</span>
+            <strong>Professional profile and work-facing visibility</strong>
+            <p>linkedin.com/in/daryllmagluyan</p>
+          </a>
+
+          <a class="link-card" href="#">
+            <span>Job Platforms</span>
+            <strong>Applications and recruiter-facing outreach</strong>
+            <p>Job platform links pending.</p>
+          </a>
+
+          <a class="link-card" href="#">
+            <span>Portfolio Sample</span>
+            <strong>Billing tracker, templates, workflow proof, and webpage samples</strong>
+            <p>Portfolio file links pending.</p>
+          </a>
+
+          <a class="link-card" href="#">
+            <span>Substack / Publication</span>
+            <strong>What CRM, Billing, and Collection Work Taught Me About Responsibility</strong>
+            <p>Substack link pending.</p>
+          </a>
+        </div>
+
+        <p class="site-note">This website is owned by Daryll Magluyan. Presentation and connection support does not change her ownership of the page, profile, or work identity.</p>
+
+        <div class="piece-controls">
+          <div class="left">
+            <button class="piece-btn" data-action="back">⬅ Back</button>
+            <button class="piece-btn" data-action="home">🏠 Home</button>
+          </div>
+          <div class="right">
+            <button class="piece-btn primary" data-action="next">Next ➜</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="parcel" id="parcel-6" data-parcel-index="5" data-page-label="Page 06 / Contact">
+      <div class="parcel-inner">
+        <div class="parcel-title">Contact</div>
+        <div class="parcel-sub">Open to serious work, growth opportunities, and guided web page support projects</div>
+
+        <p class="lead">Daryll is open to administrative support, CRM support, billing and collections work, client/account follow-up, back-office roles, and guided webpage support projects.</p>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <span>Professional Promise</span>
+            <strong>Reliable, trainable, organized, and ready to contribute to real work.</strong>
+            <p>This is the core of how she should be known professionally.</p>
+          </div>
+
+          <div class="contact-card">
+            <span>Email</span>
+            <strong>djmagluyan2001@gmail.com</strong>
+            <p>Direct professional contact email. Website inquiries may copy Secretariat support for coordination and response tracking.</p>
+          </div>
+
+          <div class="contact-card">
+            <span>Location</span>
+            <strong>Koronadal, Philippines</strong>
+            <p>Can be refined or broadened depending on preferred visibility.</p>
+          </div>
+
+          <div class="contact-card">
+            <span>Availability</span>
+            <strong>Remote, hybrid, or office-based roles</strong>
+            <p>Useful for admin, CRM, billing, collections, support functions, and webpage support.</p>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="hero-btn primary" href="mailto:djmagluyan2001@gmail.com?cc=secretariat@pascalogicstructural.com&subject=Inquiry%20for%20Daryll%20Magluyan%20-%20Administrative%20and%20Web%20Page%20Support&body=Hello%20Daryll%2C%0A%0AI%20visited%20your%20professional%20page%20and%20would%20like%20to%20inquire%20about%20your%20administrative%2C%20revenue-support%2C%20or%20web%20page%20support%20work.%0A%0AThank%20you.">Email Daryll + CC Secretariat</a>
+          <a class="hero-btn" href="https://www.linkedin.com/in/daryllmagluyan" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="hero-btn" href="#">Facebook</a>
+          <a class="hero-btn" href="#">TikTok</a>
+        </div>
+
+        <div class="piece-controls">
+          <div class="left">
+            <button class="piece-btn" data-action="back">⬅ Back</button>
+            <button class="piece-btn" data-action="home">🏠 Home</button>
+          </div>
+          <div class="right">
+            <button class="piece-btn primary" data-action="next">Next ➜</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="parcel" id="parcel-7" data-parcel-index="6" data-page-label="Page 07 / World Clock">
+      <div class="parcel-inner">
+        <div class="parcel-title">World Clock + Code Block</div>
+        <div class="parcel-sub">Dropdown-driven date and time display anchored to Philippine Time / PHT</div>
+
+        <p class="lead">This page uses a dropdown picker. It automatically shows the selected location’s current date and time while also showing the Philippine Time anchor.</p>
+
+        <div class="clock-toolbar">
+          <div>
+            <label for="timezonePicker">Select location / time zone</label>
+            <select id="timezonePicker">
+              <option value="Asia/Manila" data-label="Philippines / Manila / Koronadal" selected>Philippines / Manila / Koronadal — PHT</option>
+              <option value="Australia/Sydney" data-label="Australia / Canberra">Australia / Canberra — AET</option>
+              <option value="Asia/Dubai" data-label="United Arab Emirates / Dubai-Abu Dhabi">United Arab Emirates — GST</option>
+              <option value="America/Chicago" data-label="Texas / Dallas-Austin-Houston">Texas, United States — Central Time</option>
+              <option value="America/Los_Angeles" data-label="US West / California">US West / California — Pacific Time</option>
+              <option value="Europe/Moscow" data-label="Saint Petersburg / Historical Leningrad Reference">Saint Petersburg / Historical Leningrad Reference — MSK</option>
+            </select>
+          </div>
+
+          <button class="piece-btn primary" type="button" id="refreshClock">Refresh Clock</button>
+        </div>
+
+        <div class="clock-grid">
+          <div class="clock-card">
+            <span>Selected Location</span>
+            <strong id="selectedTime">--:--</strong>
+            <p class="date-line" id="selectedDate">Loading date...</p>
+            <p class="zone-line" id="selectedZone">Loading zone...</p>
+          </div>
+
+          <div class="clock-card">
+            <span>Philippine Anchor</span>
+            <strong id="phtTime">--:--</strong>
+            <p class="date-line" id="phtDate">Loading date...</p>
+            <p class="zone-line">Philippines / PHT / Asia-Manila</p>
+          </div>
+        </div>
+
+        <div class="accordion-group">
+          <div class="accordion-item expanded">
+            <button class="accordion-header" aria-expanded="true">
+              <span class="accordion-title">Code block inside dropdown section</span>
+              <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+              <p>This is the code logic used by the dropdown clock. It reads the selected time zone and formats the date/time accordingly.</p>
+              <div class="code-box">
+                <pre><code>const picker = document.getElementById('timezonePicker');
+
+function formatTimeForZone(timeZone) {
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone,
+    hour: 'numeric',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true
+  }).format(new Date());
+}
+
+function formatDateForZone(timeZone) {
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone,
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }).format(new Date());
+}
+
+function updateClockPanel() {
+  const selectedOption = picker.options[picker.selectedIndex];
+  const selectedZone = picker.value;
+  const selectedLabel = selectedOption.dataset.label;
+
+  document.getElementById('selectedTime').textContent = formatTimeForZone(selectedZone);
+  document.getElementById('selectedDate').textContent = formatDateForZone(selectedZone);
+  document.getElementById('selectedZone').textContent = selectedLabel + ' / ' + selectedZone;
+
+  document.getElementById('phtTime').textContent = formatTimeForZone('Asia/Manila');
+  document.getElementById('phtDate').textContent = formatDateForZone('Asia/Manila');
+}
+
+picker.addEventListener('change', updateClockPanel);
+setInterval(updateClockPanel, 1000);
+updateClockPanel();</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="piece-controls">
+          <div class="left">
+            <button class="piece-btn" data-action="back">⬅ Back</button>
+            <button class="piece-btn" data-action="home">🏠 Home</button>
+          </div>
+          <div class="right">
+            <button class="piece-btn primary" data-action="home">Finish / Home</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="nav-controls">
+    <div class="button-group">
+      <button class="nav-btn" id="btn-page-up" aria-label="Previous parcel">⬅ Back</button>
+      <button class="nav-btn" id="btn-home" aria-label="Home">🏠 Home</button>
+      <button class="nav-btn" id="btn-down" aria-label="Next parcel">Next ➜</button>
+    </div>
+  </div>
+
+  <footer>
+    © <span id="year"></span> Daryll Magluyan. All rights reserved. <br />
+    Presentation and connection support: Integree.
+  </footer>
+
+  <script>
+    (function() {
+      const parcels = Array.from(document.querySelectorAll('.parcel'));
+
+      function initAccordions() {
+        document.querySelectorAll('.accordion-item').forEach(item => {
+          const btn = item.querySelector('.accordion-header');
+          if (!btn) return;
+
+          btn.addEventListener('click', () => {
+            const isExpanded = item.classList.contains('expanded');
+            item.classList.toggle('expanded');
+            btn.setAttribute('aria-expanded', String(!isExpanded));
+          });
+
+          btn.setAttribute('aria-expanded', item.classList.contains('expanded') ? 'true' : 'false');
+        });
+      }
+
+      function getCurrentParcelIndex() {
+        const viewportTop = window.scrollY;
+        const viewportHeight = window.innerHeight;
+        let bestIndex = 0;
+        let maxVisibleArea = 0;
+
+        parcels.forEach((parcel, idx) => {
+          const rect = parcel.getBoundingClientRect();
+          const absoluteTop = rect.top + window.scrollY;
+          const absoluteBottom = rect.bottom + window.scrollY;
+          const visibleTop = Math.max(viewportTop, absoluteTop);
+          const visibleBottom = Math.min(viewportTop + viewportHeight, absoluteBottom);
+          const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+
+          if (visibleHeight > maxVisibleArea) {
+            maxVisibleArea = visibleHeight;
+            bestIndex = idx;
+          }
+        });
+
+        return bestIndex;
+      }
+
+      function scrollToParcel(parcelElement) {
+        if (!parcelElement) return;
+        const offset = 70;
+        const elementPosition = parcelElement.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - offset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      }
+
+      function highlightParcel(parcel) {
+        if (!parcel) return;
+        parcel.style.boxShadow = '0 0 0 3px #2A7FAA, 0 20px 35px -12px rgba(0,0,0,0.2)';
+        setTimeout(() => parcel.style.boxShadow = '', 600);
+      }
+
+      function goToNextParcel() {
+        const currentIdx = getCurrentParcelIndex();
+        const nextIdx = Math.min(currentIdx + 1, parcels.length - 1);
+        scrollToParcel(parcels[nextIdx]);
+        highlightParcel(parcels[nextIdx]);
+      }
+
+      function goToPreviousParcel() {
+        const currentIdx = getCurrentParcelIndex();
+        const prevIdx = Math.max(currentIdx - 1, 0);
+        scrollToParcel(parcels[prevIdx]);
+        highlightParcel(parcels[prevIdx]);
+      }
+
+      function goToHome() {
+        scrollToParcel(parcels[0]);
+        highlightParcel(parcels[0]);
+      }
+
+      function handlePieceAction(action) {
+        if (action === 'next') goToNextParcel();
+        if (action === 'back') goToPreviousParcel();
+        if (action === 'home') goToHome();
+      }
+
+      document.getElementById('btn-down').addEventListener('click', goToNextParcel);
+      document.getElementById('btn-home').addEventListener('click', goToHome);
+      document.getElementById('btn-page-up').addEventListener('click', goToPreviousParcel);
+
+      document.querySelectorAll('.piece-btn[data-action]').forEach(btn => {
+        btn.addEventListener('click', () => handlePieceAction(btn.dataset.action));
+      });
+
+      window.addEventListener('keydown', e => {
+        const activeTag = document.activeElement?.tagName;
+        if (activeTag === 'INPUT' || activeTag === 'TEXTAREA' || activeTag === 'SELECT') return;
+
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          goToNextParcel();
+        }
+
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          goToPreviousParcel();
+        }
+
+        if (e.key.toLowerCase() === 'h' || e.key === 'Home') {
+          e.preventDefault();
+          goToHome();
+        }
+      });
+
+      const picker = document.getElementById('timezonePicker');
+
+      function formatTimeForZone(timeZone) {
+        return new Intl.DateTimeFormat('en-US', {
+          timeZone,
+          hour: 'numeric',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: true
+        }).format(new Date());
+      }
+
+      function formatDateForZone(timeZone) {
+        return new Intl.DateTimeFormat('en-US', {
+          timeZone,
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        }).format(new Date());
+      }
+
+      function updateClockPanel() {
+        if (!picker) return;
+
+        const selectedOption = picker.options[picker.selectedIndex];
+        const selectedZone = picker.value;
+        const selectedLabel = selectedOption.dataset.label || selectedOption.textContent;
+
+        document.getElementById('selectedTime').textContent = formatTimeForZone(selectedZone);
+        document.getElementById('selectedDate').textContent = formatDateForZone(selectedZone);
+        document.getElementById('selectedZone').textContent = selectedLabel + ' / ' + selectedZone;
+
+        document.getElementById('phtTime').textContent = formatTimeForZone('Asia/Manila');
+        document.getElementById('phtDate').textContent = formatDateForZone('Asia/Manila');
+      }
+
+      if (picker) {
+        picker.addEventListener('change', updateClockPanel);
+      }
+
+      const refreshClock = document.getElementById('refreshClock');
+      if (refreshClock) {
+        refreshClock.addEventListener('click', updateClockPanel);
+      }
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      initAccordions();
+      updateClockPanel();
+      setInterval(updateClockPanel, 1000);
+    })();
+  </script>
+</body>
+</html>
