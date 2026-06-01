@@ -634,7 +634,7 @@
           <div class="hero-copy">
             <div class="eyebrow">Beauty, anchored by discipline</div>
             <h1>Reliable support for real work.</h1>
-            <p class="lead">Daryll Magluyan is building a professional path in administrative operations, CRM support, ArborGold-related workflow, billing, collections, client follow-up, and guided web page support.</p>
+            <p class="lead">Daryll Magluyan is building a professional path in administrative operations, CRM support, ArborGold-related workflow, billing, collections, client follow-up, and guided webpage support services.</p>
             <p>Her direction combines professional presence, organized execution, communication discipline, and practical proof-of-work growth.</p>
 
             <div class="chip-row">
@@ -657,7 +657,7 @@
             <div class="portrait">
               <div>
                 <strong>Calm. Capable. Trainable.</strong>
-                <p>This space presents Daryll’s professional direction, support capability, and emerging webpage service path.</p>
+                <p>This space presents Daryll's professional direction, support capability, and emerging webpage service path.</p>
               </div>
             </div>
 
@@ -705,7 +705,7 @@
               <span class="accordion-icon">▼</span>
             </button>
             <div class="accordion-content">
-              <p>Daryll began Mechanical Engineering studies but had to pause due to the need to work. That experience strengthens the story of responsibility, practical resilience, and disciplined rebuilding.</p>
+              <p>Daryll began Mechanical Engineering studies but had to pause due to the need to work. That experience strengthens the story of responsibility, practical resilience, and disciplined re-direction toward real impact.</p>
               <p>Her current direction is administrative operations, remote back-office support, CRM support, billing, collections, client/account follow-up, and guided webpage support.</p>
             </div>
           </div>
@@ -912,7 +912,7 @@
         </div>
 
         <div class="hero-actions">
-          <a class="hero-btn primary" href="mailto:djmagluyan2001@gmail.com?cc=secretariat@pascalogicstructural.com&subject=Inquiry%20for%20Daryll%20Magluyan%20-%20Administrative%20and%20Web%20Page%20Support&body=Hello%20Daryll%2C%0A%0AI%20visited%20your%20professional%20page%20and%20would%20like%20to%20inquire%20about%20your%20administrative%2C%20revenue-support%2C%20or%20web%20page%20support%20work.%0A%0AThank%20you.">Email Daryll + CC Secretariat</a>
+          <a class="hero-btn primary" href="mailto:djmagluyan2001@gmail.com?cc=secretariat@pascalogicstructural.com&subject=Inquiry%20for%20Daryll%20Magluyan%20-%20Administrative%20and%20Web%20Page%20Support">Email Daryll</a>
           <a class="hero-btn" href="https://www.linkedin.com/in/daryllmagluyan" target="_blank" rel="noopener">LinkedIn</a>
           <a class="hero-btn" href="#">Facebook</a>
           <a class="hero-btn" href="#">TikTok</a>
@@ -935,18 +935,18 @@
         <div class="parcel-title">World Clock + Code Block</div>
         <div class="parcel-sub">Dropdown-driven date and time display anchored to Philippine Time / PHT</div>
 
-        <p class="lead">This page uses a dropdown picker. It automatically shows the selected location’s current date and time while also showing the Philippine Time anchor.</p>
+        <p class="lead">This page uses a dropdown picker. It automatically shows the selected location's current date and time while also showing the Philippine Time anchor.</p>
 
         <div class="clock-toolbar">
           <div>
             <label for="timezonePicker">Select location / time zone</label>
             <select id="timezonePicker">
               <option value="Asia/Manila" data-label="Philippines / Manila / Koronadal" selected>Philippines / Manila / Koronadal — PHT</option>
-              <option value="Australia/Sydney" data-label="Australia / Canberra">Australia / Canberra — AET</option>
-              <option value="Asia/Dubai" data-label="United Arab Emirates / Dubai-Abu Dhabi">United Arab Emirates — GST</option>
+              <option value="Australia/Sydney" data-label="Australia / Sydney">Australia / Sydney — AEDT/AEST</option>
+              <option value="Asia/Dubai" data-label="United Arab Emirates / Dubai">United Arab Emirates / Dubai — GST</option>
               <option value="America/Chicago" data-label="Texas / Dallas-Austin-Houston">Texas, United States — Central Time</option>
               <option value="America/Los_Angeles" data-label="US West / California">US West / California — Pacific Time</option>
-              <option value="Europe/Moscow" data-label="Saint Petersburg / Historical Leningrad Reference">Saint Petersburg / Historical Leningrad Reference — MSK</option>
+              <option value="Europe/Moscow" data-label="Russia / Moscow">Russia / Moscow — MSK</option>
             </select>
           </div>
 
@@ -979,6 +979,7 @@
               <p>This is the code logic used by the dropdown clock. It reads the selected time zone and formats the date/time accordingly.</p>
               <div class="code-box">
                 <pre><code>const picker = document.getElementById('timezonePicker');
+const refreshBtn = document.getElementById('refreshClock');
 
 function formatTimeForZone(timeZone) {
   return new Intl.DateTimeFormat('en-US', {
@@ -1000,22 +1001,23 @@ function formatDateForZone(timeZone) {
   }).format(new Date());
 }
 
-function updateClockPanel() {
-  const selectedOption = picker.options[picker.selectedIndex];
+function updateClocks() {
   const selectedZone = picker.value;
-  const selectedLabel = selectedOption.dataset.label;
+  const selectedLabel = picker.options[picker.selectedIndex].dataset.label;
 
   document.getElementById('selectedTime').textContent = formatTimeForZone(selectedZone);
   document.getElementById('selectedDate').textContent = formatDateForZone(selectedZone);
-  document.getElementById('selectedZone').textContent = selectedLabel + ' / ' + selectedZone;
+  document.getElementById('selectedZone').textContent = selectedLabel;
 
   document.getElementById('phtTime').textContent = formatTimeForZone('Asia/Manila');
   document.getElementById('phtDate').textContent = formatDateForZone('Asia/Manila');
 }
 
-picker.addEventListener('change', updateClockPanel);
-setInterval(updateClockPanel, 1000);
-updateClockPanel();</code></pre>
+picker.addEventListener('change', updateClocks);
+refreshBtn.addEventListener('click', updateClocks);
+
+// Initialize on page load
+updateClocks();</code></pre>
               </div>
             </div>
           </div>
@@ -1027,7 +1029,7 @@ updateClockPanel();</code></pre>
             <button class="piece-btn" data-action="home">🏠 Home</button>
           </div>
           <div class="right">
-            <button class="piece-btn primary" data-action="home">Finish / Home</button>
+            <button class="piece-btn" data-action="next">Next ➜</button>
           </div>
         </div>
       </div>
@@ -1035,180 +1037,98 @@ updateClockPanel();</code></pre>
 
   </div>
 
-  <div class="nav-controls">
-    <div class="button-group">
-      <button class="nav-btn" id="btn-page-up" aria-label="Previous parcel">⬅ Back</button>
-      <button class="nav-btn" id="btn-home" aria-label="Home">🏠 Home</button>
-      <button class="nav-btn" id="btn-down" aria-label="Next parcel">Next ➜</button>
-    </div>
-  </div>
-
   <footer>
-    © <span id="year"></span> Daryll Magluyan. All rights reserved. <br />
-    Presentation and connection support: Integree.
+    <p>© 2024 Daryll Magluyan. All rights reserved. Built with care and discipline.</p>
   </footer>
 
   <script>
-    (function() {
-      const parcels = Array.from(document.querySelectorAll('.parcel'));
-
-      function initAccordions() {
-        document.querySelectorAll('.accordion-item').forEach(item => {
-          const btn = item.querySelector('.accordion-header');
-          if (!btn) return;
-
-          btn.addEventListener('click', () => {
-            const isExpanded = item.classList.contains('expanded');
-            item.classList.toggle('expanded');
-            btn.setAttribute('aria-expanded', String(!isExpanded));
-          });
-
-          btn.setAttribute('aria-expanded', item.classList.contains('expanded') ? 'true' : 'false');
+    // Accordion toggle functionality
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', function() {
+        const item = this.parentElement;
+        const isExpanded = item.classList.contains('expanded');
+        
+        // Close all accordions in the same group
+        const group = item.parentElement;
+        group.querySelectorAll('.accordion-item').forEach(accordion => {
+          accordion.classList.remove('expanded');
+          accordion.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
         });
-      }
-
-      function getCurrentParcelIndex() {
-        const viewportTop = window.scrollY;
-        const viewportHeight = window.innerHeight;
-        let bestIndex = 0;
-        let maxVisibleArea = 0;
-
-        parcels.forEach((parcel, idx) => {
-          const rect = parcel.getBoundingClientRect();
-          const absoluteTop = rect.top + window.scrollY;
-          const absoluteBottom = rect.bottom + window.scrollY;
-          const visibleTop = Math.max(viewportTop, absoluteTop);
-          const visibleBottom = Math.min(viewportTop + viewportHeight, absoluteBottom);
-          const visibleHeight = Math.max(0, visibleBottom - visibleTop);
-
-          if (visibleHeight > maxVisibleArea) {
-            maxVisibleArea = visibleHeight;
-            bestIndex = idx;
-          }
-        });
-
-        return bestIndex;
-      }
-
-      function scrollToParcel(parcelElement) {
-        if (!parcelElement) return;
-        const offset = 70;
-        const elementPosition = parcelElement.getBoundingClientRect().top + window.scrollY;
-        const offsetPosition = elementPosition - offset;
-        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-      }
-
-      function highlightParcel(parcel) {
-        if (!parcel) return;
-        parcel.style.boxShadow = '0 0 0 3px #2A7FAA, 0 20px 35px -12px rgba(0,0,0,0.2)';
-        setTimeout(() => parcel.style.boxShadow = '', 600);
-      }
-
-      function goToNextParcel() {
-        const currentIdx = getCurrentParcelIndex();
-        const nextIdx = Math.min(currentIdx + 1, parcels.length - 1);
-        scrollToParcel(parcels[nextIdx]);
-        highlightParcel(parcels[nextIdx]);
-      }
-
-      function goToPreviousParcel() {
-        const currentIdx = getCurrentParcelIndex();
-        const prevIdx = Math.max(currentIdx - 1, 0);
-        scrollToParcel(parcels[prevIdx]);
-        highlightParcel(parcels[prevIdx]);
-      }
-
-      function goToHome() {
-        scrollToParcel(parcels[0]);
-        highlightParcel(parcels[0]);
-      }
-
-      function handlePieceAction(action) {
-        if (action === 'next') goToNextParcel();
-        if (action === 'back') goToPreviousParcel();
-        if (action === 'home') goToHome();
-      }
-
-      document.getElementById('btn-down').addEventListener('click', goToNextParcel);
-      document.getElementById('btn-home').addEventListener('click', goToHome);
-      document.getElementById('btn-page-up').addEventListener('click', goToPreviousParcel);
-
-      document.querySelectorAll('.piece-btn[data-action]').forEach(btn => {
-        btn.addEventListener('click', () => handlePieceAction(btn.dataset.action));
-      });
-
-      window.addEventListener('keydown', e => {
-        const activeTag = document.activeElement?.tagName;
-        if (activeTag === 'INPUT' || activeTag === 'TEXTAREA' || activeTag === 'SELECT') return;
-
-        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-          e.preventDefault();
-          goToNextParcel();
-        }
-
-        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-          e.preventDefault();
-          goToPreviousParcel();
-        }
-
-        if (e.key.toLowerCase() === 'h' || e.key === 'Home') {
-          e.preventDefault();
-          goToHome();
+        
+        // Open the clicked one if it wasn't already open
+        if (!isExpanded) {
+          item.classList.add('expanded');
+          this.setAttribute('aria-expanded', 'true');
         }
       });
+    });
 
-      const picker = document.getElementById('timezonePicker');
+    // Page navigation buttons
+    document.querySelectorAll('[data-action]').forEach(button => {
+      button.addEventListener('click', function() {
+        const action = this.dataset.action;
+        const currentParcel = this.closest('.parcel');
+        const currentIndex = parseInt(currentParcel.dataset.parcelIndex);
+        let targetId;
 
-      function formatTimeForZone(timeZone) {
-        return new Intl.DateTimeFormat('en-US', {
-          timeZone,
-          hour: 'numeric',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: true
-        }).format(new Date());
-      }
+        if (action === 'next') {
+          targetId = `parcel-${currentIndex + 2}`;
+        } else if (action === 'back') {
+          targetId = `parcel-${currentIndex}`;
+        } else if (action === 'home') {
+          targetId = 'parcel-1';
+        }
 
-      function formatDateForZone(timeZone) {
-        return new Intl.DateTimeFormat('en-US', {
-          timeZone,
-          weekday: 'long',
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        }).format(new Date());
-      }
+        const targetParcel = document.getElementById(targetId);
+        if (targetParcel) {
+          targetParcel.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
 
-      function updateClockPanel() {
-        if (!picker) return;
+    // World Clock functionality
+    const picker = document.getElementById('timezonePicker');
+    const refreshBtn = document.getElementById('refreshClock');
 
-        const selectedOption = picker.options[picker.selectedIndex];
-        const selectedZone = picker.value;
-        const selectedLabel = selectedOption.dataset.label || selectedOption.textContent;
+    function formatTimeForZone(timeZone) {
+      return new Intl.DateTimeFormat('en-US', {
+        timeZone,
+        hour: 'numeric',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      }).format(new Date());
+    }
 
-        document.getElementById('selectedTime').textContent = formatTimeForZone(selectedZone);
-        document.getElementById('selectedDate').textContent = formatDateForZone(selectedZone);
-        document.getElementById('selectedZone').textContent = selectedLabel + ' / ' + selectedZone;
+    function formatDateForZone(timeZone) {
+      return new Intl.DateTimeFormat('en-US', {
+        timeZone,
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      }).format(new Date());
+    }
 
-        document.getElementById('phtTime').textContent = formatTimeForZone('Asia/Manila');
-        document.getElementById('phtDate').textContent = formatDateForZone('Asia/Manila');
-      }
+    function updateClocks() {
+      const selectedZone = picker.value;
+      const selectedLabel = picker.options[picker.selectedIndex].dataset.label;
 
-      if (picker) {
-        picker.addEventListener('change', updateClockPanel);
-      }
+      document.getElementById('selectedTime').textContent = formatTimeForZone(selectedZone);
+      document.getElementById('selectedDate').textContent = formatDateForZone(selectedZone);
+      document.getElementById('selectedZone').textContent = selectedLabel;
 
-      const refreshClock = document.getElementById('refreshClock');
-      if (refreshClock) {
-        refreshClock.addEventListener('click', updateClockPanel);
-      }
+      document.getElementById('phtTime').textContent = formatTimeForZone('Asia/Manila');
+      document.getElementById('phtDate').textContent = formatDateForZone('Asia/Manila');
+    }
 
-      document.getElementById('year').textContent = new Date().getFullYear();
-
-      initAccordions();
-      updateClockPanel();
-      setInterval(updateClockPanel, 1000);
-    })();
+    if (picker) {
+      picker.addEventListener('change', updateClocks);
+      refreshBtn.addEventListener('click', updateClocks);
+      // Initialize on page load
+      updateClocks();
+    }
   </script>
+
 </body>
 </html>
